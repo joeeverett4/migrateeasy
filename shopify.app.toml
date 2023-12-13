@@ -1,0 +1,27 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+name = "easymigrate"
+client_id = "f1c7f499c25a742849e8655542646c65"
+application_url = "https://anthropology-half-arrest-listing.trycloudflare.com"
+embedded = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://anthropology-half-arrest-listing.trycloudflare.com/auth/callback",
+  "https://anthropology-half-arrest-listing.trycloudflare.com/auth/shopify/callback",
+  "https://anthropology-half-arrest-listing.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2023-10"
+
+[pos]
+embedded = false
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "dev-store-app-1.myshopify.com"
