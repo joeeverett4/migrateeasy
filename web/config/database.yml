@@ -15,15 +15,13 @@
 # gem "pg"
 #
 default: &default
-  adapter: mysql2
+  adapter: postgresql
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-development:
-  <<: *default
-  database: myapp_development
+
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -55,9 +53,6 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
-  <<: *default
-  database: myapp_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -81,5 +76,7 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV["JAWSDB_URL"] %>
-  
+  database: admin
+  username: admin
+  password: <%= ENV["STACKHERO_POSTGRESQL_ADMIN_PASSWORD"] %>
+  host: <%= ENV["STACKHERO_POSTGRESQL_HOST"] %>
