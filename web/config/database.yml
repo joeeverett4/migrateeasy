@@ -1,4 +1,4 @@
-# PostgreSQL. Versions 9.3 and up are supported.
+
 #
 # Install the pg driver:
 #   gem install pg
@@ -15,7 +15,7 @@
 # gem "pg"
 #
 default: &default
-  adapter: postgresql
+  adapter: mysql2
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
@@ -79,10 +79,7 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
-
-
 production:
-  url: <%= ENV['STACKHERO_POSTGRESQL_HOST'] %>
-  password: <%= ENV['STACKHERO_POSTGRESQL_ADMIN_PASSWORD'] %> 
-
-
+  <<: *default
+  url: <%= ENV["JAWSDB_URL"] %>
+  
