@@ -3,7 +3,7 @@ FROM ruby:3.1
 ARG SHOPIFY_API_KEY
 ENV SHOPIFY_API_KEY=$SHOPIFY_API_KEY
 
-RUN apt-get update && apt-get install -y nodejs npm git build-essential libsqlite3-dev bash openssl
+RUN apt-get update && apt-get install -y nodejs npm git build-essential libpq-dev libsqlite3-dev bash openssl
 WORKDIR /app
 
 COPY web .

@@ -52,8 +52,4 @@ development:
   #schema_search_path: myapp,sharedapp,public
 
 production:
-  <<: *default
-  database: chesstournsment
-  username: admin
-  password: <%= ENV["STACKHERO_POSTGRESQL_ADMIN_PASSWORD"] %>
-  host: <%= ENV["STACKHERO_POSTGRESQL_HOST"] %>
+  url: <%= ENV['DATABASE_URL'] %>
