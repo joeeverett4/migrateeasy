@@ -52,4 +52,4 @@ development:
   #schema_search_path: myapp,sharedapp,public
 
 production:
-  url: <%= ENV['DATABASE_URL'] %>
+  url: <%= ENV['STACKHERO_DATABASE_URL'] %>
